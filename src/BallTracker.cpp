@@ -1,5 +1,7 @@
 #include "../include/BallTracker.h"
 
+using namespace cv;
+
 namespace nurc
 {
 
@@ -12,9 +14,17 @@ BallTracker::BallTracker()
 		camera_frame_ = Mat( video_cap_.get(CV_CAP_PROP_FRAME_HEIGHT), 
 												 video_cap_.get(CV_CAP_PROP_FRAME_WIDTH),
 												 CV_8UC3 );
+		hsv_frame_ = Mat( video_cap_.get(CV_CAP_PROP_FRAME_HEIGHT), 
+												 video_cap_.get(CV_CAP_PROP_FRAME_WIDTH),
+												 CV_8UC3 );
+		threshold_frame_ = Mat( video_cap_.get(CV_CAP_PROP_FRAME_HEIGHT), 
+												 video_cap_.get(CV_CAP_PROP_FRAME_WIDTH),
+												 CV_8UC1 );
 	}
 	else {
 		camera_frame_ = Mat( 600, 800, CV_8UC3 );
+		hsv_frame_ = Mat( 600, 800, CV_8UC3 );
+		threshold_frame_ = Mat( 600, 800, CV_8UC1 );
 	}
 }
 
@@ -25,23 +35,14 @@ Point_<unsigned int> BallTracker::calculateBallImageCenter()
 
 Point_<unsigned int> BallTracker::calculateBallImageCenter(Mat& image)
 {
-	if(image.depth() == 3 && video_cap_.isOpened()) {
-		Mat hsv_frame = Mat( image.rows, camera_frame_.cols, CV_8UC3 );
-		Mat threshold_frame = Mat( image.rows, camera_frame_.cols, CV_8U);
+	if(image.channels() == 3 && video_cap_.isOpened()) {
+		hsv_frame_.create( image.rows, image.cols, CV_8UC3 );
+		threshold_frame_.create( image.rows, image.cols, CV_8UC1);
+		Mat temp_tf = Mat( image.rows, image.cols, CV_8UC1 );
+		
+		cvtColor(image, hsv_frame_, COLOR_BGR2HSV);
+		inRange(hsv_frame_, Scalar(150,50,50), Scalar(175,255,255), threshold_frame_);
 
-		cvtColor(image, hsv_frame, COLOR_BGR2HSV);
-		
-		for(int i = 0; i < hsv_frame.rows; i++) {
-			uchar *hsv_row = hsv_frame.ptr<uchar>(i);
-			uchar *threshold_row = threshold_frame.ptr<uchar>(i);
-
-			for(int j = 0; j < hsv_frame.cols; j++) {
-				if(hsv_row[hsv_frame.channels()*j] < 10 || hsv_row[hsv_frame.channels()*j] >= 345) threshold_row[j] = 255;
-				else threshold_row[j] = 0;
-			}
-		
-		}
-		
 		// Given the threshold image find circles or use histogram
 		return Point_<unsigned int>(0,0);
 	}
@@ -80,7 +81,15 @@ int main(int argc, char *argv[])
 {
 	nurc::BallTracker sample_tracker;
 	
+	namedWindow("Ball Tracker", CV_WINDOW_AUTOSIZE);
+	namedWindow("Threshold Tracker", CV_WINDOW_AUTOSIZE);
+	while(waitKey(1) == -1 && sample_tracker.fetchImageFrame()) {
+		Point_<unsigned> center = sample_tracker.calculateBallImageCenter();
+		imshow("Ball Tracker", sample_tracker.getCameraFrame());
+		imshow("Threshold Tracker", sample_tracker.getThresholdFrame());
+	}
+	
 	// Add functionality
-
+	
 	return 0;
 }
