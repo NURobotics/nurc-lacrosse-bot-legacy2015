@@ -1,6 +1,7 @@
 #include "../include/BallTracker.h"
 
 using namespace cv;
+using namespace std;
 
 namespace nurc
 {
@@ -42,9 +43,27 @@ Point_<unsigned int> BallTracker::calculateBallImageCenter(Mat& image)
 		
 		cvtColor(image, hsv_frame_, COLOR_BGR2HSV);
 		inRange(hsv_frame_, Scalar(150,50,50), Scalar(175,255,255), threshold_frame_);
+		
+		GaussianBlur(threshold_frame_, threshold_frame_, Size(9,9),2,2);
+		Canny(threshold_frame_, threshold_frame_, 100, 100*3, 3);
 
+		Point_<unsigned int> center;
+		vector<Vec3f> balls;
+
+		HoughCircles(threshold_frame_, balls, CV_HOUGH_GRADIENT, 1, threshold_frame_.rows/8, 200, 100, 0, 0);
+
+		for( size_t i = 0; i < balls.size(); i++ ) {
+			center.x = cvRound(balls[i][0]);
+			center.y = cvRound(balls[i][1]);
+			int radius = cvRound(balls[i][2]);
+
+			circle(camera_frame_, center, 3, Scalar(0,255,0), -1, 8, 0);
+			circle(camera_frame_, center, radius, Scalar(0,0,255), 3, 8, 0);
+			cout << "Found circle at coordinates: (" << center.x << "," << center.y << ")." << endl;
+		}
+		
 		// Given the threshold image find circles or use histogram
-		return Point_<unsigned int>(0,0);
+		return center;
 	}
 	else return Point_<unsigned int>(0,0);
 }
