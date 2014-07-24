@@ -1,4 +1,4 @@
-#include "../include/BallTracker.h"
+#include <lacrosse_bot/BallTracker.h>
 
 using namespace cv;
 using namespace std;
@@ -45,7 +45,7 @@ Point_<unsigned int> BallTracker::calculateBallImageCenter(Mat& image)
 		inRange(hsv_frame_, Scalar(150,50,50), Scalar(175,255,255), threshold_frame_);
 		
 		GaussianBlur(threshold_frame_, threshold_frame_, Size(9,9),2,2);
-		Canny(threshold_frame_, threshold_frame_, 100, 100*3, 3);
+		// Canny(threshold_frame_, threshold_frame_, 100, 100*3, 3);
 
 		Point_<unsigned int> center;
 		vector<Vec3f> balls;
