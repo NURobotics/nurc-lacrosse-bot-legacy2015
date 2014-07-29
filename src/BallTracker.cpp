@@ -1,4 +1,4 @@
-#include <lacrosse_bot/BallTracker.h>
+#include <lacrosse-bot/BallTracker.h>
 
 using namespace cv;
 using namespace std;

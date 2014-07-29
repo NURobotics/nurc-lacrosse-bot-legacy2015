@@ -1,4 +1,4 @@
-#include <lacrosse_bot/filter/ThresholdFilter.h>
+#include <lacrosse-bot/filter/ThresholdFilter.h>
 
 namespace nurc {
 
