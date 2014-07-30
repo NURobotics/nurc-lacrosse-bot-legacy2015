@@ -17,5 +17,5 @@ filters:
 	${CXX} ${CXX_VERS} ${CV_INCL_LCOATION} ${INCL_LOCATION} ${CV_LIB_LOCATION} -g -o ../bin/ThresholdFilter ThresholdFilter.cpp ${CV_LIB}
 
 clean:
-	cd ../; rm *.o;
-	cd ../bin; rm -f *;
+	( rm *.o; )
+	( cd ../bin; rm -f *; )
