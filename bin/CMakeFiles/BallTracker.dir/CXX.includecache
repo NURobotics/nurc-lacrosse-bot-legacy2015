@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/lacrosse-bot/tracker/BallTracker.h
+opencv2/opencv.hpp
+-
+opencv2/core/core.hpp
+-
+opencv2/highgui/highgui.hpp
+-
+deque
+-
+stdio.h
+-
+stdlib.h
+-
+
+/home/tgd/Code/nurobotics_ws/lacrosse-bot/src/BallTracker.cpp
+lacrosse-bot/tracker/BallTracker.h
+-
+
