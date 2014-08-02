@@ -1,3 +1,6 @@
+#ifndef LACROSSSE_BOT_THRESHOLDFILTER_H
+#define LACROSSSE_BOT_THRESHOLDFILTER_H
+
 #include <lacrosse-bot/filter/Filter.h>
 
 namespace nurc {
@@ -62,3 +65,5 @@ protected:
 };
 
 } // namespace nurc
+
+#endif

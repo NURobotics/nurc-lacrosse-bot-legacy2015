@@ -1,3 +1,6 @@
+#ifndef LACROSSE_BOT_BALLTRACKER_H
+#define LACROSSE_BOT_BALLTRACKER_H
+
 #include <opencv2/opencv.hpp>
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
@@ -42,4 +45,6 @@ protected:
 	cv::Point3_<double> ball_hsv_;
 };
 
-}
+} // namespace nurc
+
+#endif

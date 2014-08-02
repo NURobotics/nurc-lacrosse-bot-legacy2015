@@ -1,3 +1,6 @@
+#ifndef LACROSSE_BOT_FILTER_H
+#define LACROSSE_BOT_FILTER_H
+
 #include <opencv2/core/core.hpp>
 #include <opencv2/opencv.hpp>
 
@@ -21,3 +24,5 @@ private:
 };
 
 } // namespace
+
+#endif
