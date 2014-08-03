@@ -1,2 +1,5 @@
+/home/tgd/Code/nurobotics_ws/lacrosse-bot/bin/CMakeFiles/Algorithms.dir
 /home/tgd/Code/nurobotics_ws/lacrosse-bot/bin/CMakeFiles/BallTracker.dir
+/home/tgd/Code/nurobotics_ws/lacrosse-bot/bin/CMakeFiles/Filters.dir
 /home/tgd/Code/nurobotics_ws/lacrosse-bot/bin/CMakeFiles/ThresholdFilter.dir
+/home/tgd/Code/nurobotics_ws/lacrosse-bot/bin/CMakeFiles/Trackers.dir

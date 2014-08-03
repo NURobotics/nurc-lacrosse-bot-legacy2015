@@ -80,6 +80,24 @@ BallTracker_OBJECTS = \
 BallTracker_EXTERNAL_OBJECTS =
 
 BallTracker: CMakeFiles/BallTracker.dir/src/BallTracker.cpp.o
+BallTracker: /opt/ros/groovy/lib/libopencv_calib3d.so
+BallTracker: /opt/ros/groovy/lib/libopencv_contrib.so
+BallTracker: /opt/ros/groovy/lib/libopencv_core.so
+BallTracker: /opt/ros/groovy/lib/libopencv_features2d.so
+BallTracker: /opt/ros/groovy/lib/libopencv_flann.so
+BallTracker: /opt/ros/groovy/lib/libopencv_gpu.so
+BallTracker: /opt/ros/groovy/lib/libopencv_highgui.so
+BallTracker: /opt/ros/groovy/lib/libopencv_imgproc.so
+BallTracker: /opt/ros/groovy/lib/libopencv_legacy.so
+BallTracker: /opt/ros/groovy/lib/libopencv_ml.so
+BallTracker: /opt/ros/groovy/lib/libopencv_nonfree.so
+BallTracker: /opt/ros/groovy/lib/libopencv_objdetect.so
+BallTracker: /opt/ros/groovy/lib/libopencv_photo.so
+BallTracker: /opt/ros/groovy/lib/libopencv_stitching.so
+BallTracker: /opt/ros/groovy/lib/libopencv_superres.so
+BallTracker: /opt/ros/groovy/lib/libopencv_ts.so
+BallTracker: /opt/ros/groovy/lib/libopencv_video.so
+BallTracker: /opt/ros/groovy/lib/libopencv_videostab.so
 BallTracker: CMakeFiles/BallTracker.dir/build.make
 BallTracker: CMakeFiles/BallTracker.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable BallTracker"

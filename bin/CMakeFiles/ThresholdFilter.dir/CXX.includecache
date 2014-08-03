@@ -6,29 +6,3 @@
 
 #IncludeRegexTransform: 
 
-../include/lacrosse-bot/filter/Filter.h
-opencv2/core/core.hpp
--
-opencv2/opencv.hpp
--
-
-../include/lacrosse-bot/filter/ThresholdFilter.h
-lacrosse-bot/filter/Filter.h
--
-
-/home/tgd/Code/nurobotics_ws/lacrosse-bot/src/ThresholdFilter.cpp
-opencv2/highgui/highgui.hpp
--
-opencv2/imgproc/imgproc.hpp
--
-lacrosse-bot/filter/ThresholdFilter.h
--
-iostream
--
-unistd.h
--
-sstream
--
-string
--
-

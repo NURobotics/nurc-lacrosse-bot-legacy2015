@@ -1,10 +1,10 @@
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/imgproc/imgproc.hpp>
-#include <lacrosse-bot/filter/ThresholdFilter.h>
 #include <iostream>
-#include <unistd.h>
 #include <sstream>
 #include <string>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
+#include <lacrosse-bot/filter/ThresholdFilter.hpp>
+#include <lacrosse-bot/algorithm/Algorithm.hpp>
 
 
 namespace nurc {
@@ -35,6 +35,7 @@ int main(int argc, char **argv)
 	std::cout << "What type of test would you like to run ([i]mage|[v]ideo): ";
 	std::cin >> type;
 	nurc::ThresholdFilter t1(cv::Vec3b(150,0,0), cv::Vec3b(175,255,255));
+	nurc::Centroid a1;
 	cv::namedWindow("Test Output", CV_WINDOW_AUTOSIZE);
 
 	if(type != 'i' && type != 'v') type = 'i';
@@ -75,7 +76,10 @@ int main(int argc, char **argv)
 			cv::resize(image, image, cv::Size(0,0), 0.5, 0.5, cv::INTER_LANCZOS4);
 			cv::GaussianBlur(image, image, cv::Size(9,9), 2, 2);
 			cv::imshow("Test Output", t1(image));
-
+			
+			cv::Point centroid = a1(image);
+			std::cout << "The centroid was calcualted at: (" << centroid.x << ", " << centroid.y << ")" << std::endl;
+			
 		}
 	}
 

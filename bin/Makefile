@@ -99,6 +99,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named Algorithms
+
+# Build rule for target.
+Algorithms: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Algorithms
+.PHONY : Algorithms
+
+# fast build rule for target.
+Algorithms/fast:
+	$(MAKE) -f CMakeFiles/Algorithms.dir/build.make CMakeFiles/Algorithms.dir/build
+.PHONY : Algorithms/fast
+
+#=============================================================================
 # Target rules for targets named BallTracker
 
 # Build rule for target.
@@ -110,6 +123,19 @@ BallTracker: cmake_check_build_system
 BallTracker/fast:
 	$(MAKE) -f CMakeFiles/BallTracker.dir/build.make CMakeFiles/BallTracker.dir/build
 .PHONY : BallTracker/fast
+
+#=============================================================================
+# Target rules for targets named Filters
+
+# Build rule for target.
+Filters: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Filters
+.PHONY : Filters
+
+# fast build rule for target.
+Filters/fast:
+	$(MAKE) -f CMakeFiles/Filters.dir/build.make CMakeFiles/Filters.dir/build
+.PHONY : Filters/fast
 
 #=============================================================================
 # Target rules for targets named ThresholdFilter
@@ -124,12 +150,50 @@ ThresholdFilter/fast:
 	$(MAKE) -f CMakeFiles/ThresholdFilter.dir/build.make CMakeFiles/ThresholdFilter.dir/build
 .PHONY : ThresholdFilter/fast
 
+#=============================================================================
+# Target rules for targets named Trackers
+
+# Build rule for target.
+Trackers: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Trackers
+.PHONY : Trackers
+
+# fast build rule for target.
+Trackers/fast:
+	$(MAKE) -f CMakeFiles/Trackers.dir/build.make CMakeFiles/Trackers.dir/build
+.PHONY : Trackers/fast
+
+src/Algorithm.o: src/Algorithm.cpp.o
+.PHONY : src/Algorithm.o
+
+# target to build an object file
+src/Algorithm.cpp.o:
+	$(MAKE) -f CMakeFiles/Algorithms.dir/build.make CMakeFiles/Algorithms.dir/src/Algorithm.cpp.o
+.PHONY : src/Algorithm.cpp.o
+
+src/Algorithm.i: src/Algorithm.cpp.i
+.PHONY : src/Algorithm.i
+
+# target to preprocess a source file
+src/Algorithm.cpp.i:
+	$(MAKE) -f CMakeFiles/Algorithms.dir/build.make CMakeFiles/Algorithms.dir/src/Algorithm.cpp.i
+.PHONY : src/Algorithm.cpp.i
+
+src/Algorithm.s: src/Algorithm.cpp.s
+.PHONY : src/Algorithm.s
+
+# target to generate assembly for a file
+src/Algorithm.cpp.s:
+	$(MAKE) -f CMakeFiles/Algorithms.dir/build.make CMakeFiles/Algorithms.dir/src/Algorithm.cpp.s
+.PHONY : src/Algorithm.cpp.s
+
 src/BallTracker.o: src/BallTracker.cpp.o
 .PHONY : src/BallTracker.o
 
 # target to build an object file
 src/BallTracker.cpp.o:
 	$(MAKE) -f CMakeFiles/BallTracker.dir/build.make CMakeFiles/BallTracker.dir/src/BallTracker.cpp.o
+	$(MAKE) -f CMakeFiles/Trackers.dir/build.make CMakeFiles/Trackers.dir/src/BallTracker.cpp.o
 .PHONY : src/BallTracker.cpp.o
 
 src/BallTracker.i: src/BallTracker.cpp.i
@@ -138,6 +202,7 @@ src/BallTracker.i: src/BallTracker.cpp.i
 # target to preprocess a source file
 src/BallTracker.cpp.i:
 	$(MAKE) -f CMakeFiles/BallTracker.dir/build.make CMakeFiles/BallTracker.dir/src/BallTracker.cpp.i
+	$(MAKE) -f CMakeFiles/Trackers.dir/build.make CMakeFiles/Trackers.dir/src/BallTracker.cpp.i
 .PHONY : src/BallTracker.cpp.i
 
 src/BallTracker.s: src/BallTracker.cpp.s
@@ -146,6 +211,7 @@ src/BallTracker.s: src/BallTracker.cpp.s
 # target to generate assembly for a file
 src/BallTracker.cpp.s:
 	$(MAKE) -f CMakeFiles/BallTracker.dir/build.make CMakeFiles/BallTracker.dir/src/BallTracker.cpp.s
+	$(MAKE) -f CMakeFiles/Trackers.dir/build.make CMakeFiles/Trackers.dir/src/BallTracker.cpp.s
 .PHONY : src/BallTracker.cpp.s
 
 src/ThresholdFilter.o: src/ThresholdFilter.cpp.o
@@ -153,6 +219,7 @@ src/ThresholdFilter.o: src/ThresholdFilter.cpp.o
 
 # target to build an object file
 src/ThresholdFilter.cpp.o:
+	$(MAKE) -f CMakeFiles/Filters.dir/build.make CMakeFiles/Filters.dir/src/ThresholdFilter.cpp.o
 	$(MAKE) -f CMakeFiles/ThresholdFilter.dir/build.make CMakeFiles/ThresholdFilter.dir/src/ThresholdFilter.cpp.o
 .PHONY : src/ThresholdFilter.cpp.o
 
@@ -161,6 +228,7 @@ src/ThresholdFilter.i: src/ThresholdFilter.cpp.i
 
 # target to preprocess a source file
 src/ThresholdFilter.cpp.i:
+	$(MAKE) -f CMakeFiles/Filters.dir/build.make CMakeFiles/Filters.dir/src/ThresholdFilter.cpp.i
 	$(MAKE) -f CMakeFiles/ThresholdFilter.dir/build.make CMakeFiles/ThresholdFilter.dir/src/ThresholdFilter.cpp.i
 .PHONY : src/ThresholdFilter.cpp.i
 
@@ -169,6 +237,7 @@ src/ThresholdFilter.s: src/ThresholdFilter.cpp.s
 
 # target to generate assembly for a file
 src/ThresholdFilter.cpp.s:
+	$(MAKE) -f CMakeFiles/Filters.dir/build.make CMakeFiles/Filters.dir/src/ThresholdFilter.cpp.s
 	$(MAKE) -f CMakeFiles/ThresholdFilter.dir/build.make CMakeFiles/ThresholdFilter.dir/src/ThresholdFilter.cpp.s
 .PHONY : src/ThresholdFilter.cpp.s
 
@@ -178,10 +247,16 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... Algorithms"
 	@echo "... BallTracker"
+	@echo "... Filters"
 	@echo "... ThresholdFilter"
+	@echo "... Trackers"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... src/Algorithm.o"
+	@echo "... src/Algorithm.i"
+	@echo "... src/Algorithm.s"
 	@echo "... src/BallTracker.o"
 	@echo "... src/BallTracker.i"
 	@echo "... src/BallTracker.s"

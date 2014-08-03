@@ -1,12 +1,12 @@
 #ifndef LACROSSE_BOT_BALLTRACKER_H
 #define LACROSSE_BOT_BALLTRACKER_H
 
+
+#include <deque>
 #include <opencv2/opencv.hpp>
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
-#include <deque>
-#include <stdio.h>
-#include <stdlib.h>
+
 
 namespace nurc 
 {
@@ -46,5 +46,6 @@ protected:
 };
 
 } // namespace nurc
+
 
 #endif

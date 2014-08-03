@@ -1,7 +1,9 @@
 #ifndef LACROSSSE_BOT_THRESHOLDFILTER_H
 #define LACROSSSE_BOT_THRESHOLDFILTER_H
 
-#include <lacrosse-bot/filter/Filter.h>
+
+#include <lacrosse-bot/filter/Filter.hpp>
+
 
 namespace nurc {
 
@@ -55,8 +57,6 @@ public:
 	Vec3b getLowerBound() { return lower_bound_; }
 	Vec3b getUpperBound() { return upper_bound_; }
 	Vec3b getTarget() { return target_; }
-
-	const char *debug() { return "THRESHOLDFILTER DEBUGGING"; }	
 	
 protected:
 	Vec3b target_, lower_bound_, upper_bound_;
@@ -65,5 +65,6 @@ protected:
 };
 
 } // namespace nurc
+
 
 #endif

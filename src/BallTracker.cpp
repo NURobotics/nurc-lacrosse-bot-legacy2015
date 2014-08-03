@@ -1,12 +1,11 @@
-#include <lacrosse-bot/tracker/BallTracker.h>
+#include <lacrosse-bot/tracker/BallTracker.hpp>
 
-using namespace cv;
-using namespace std;
 
 namespace nurc
 {
 
 using namespace cv;
+using namespace std;
 
 BallTracker::BallTracker()
 {
@@ -94,18 +93,19 @@ bool BallTracker::setVideoCapture(const char* capture)
 	return video_cap_.isOpened();
 }
 
-}
+} // namespace nurc
+
 
 int main(int argc, char *argv[])
 {
 	nurc::BallTracker sample_tracker;
 	
-	namedWindow("Ball Tracker", CV_WINDOW_AUTOSIZE);
-	namedWindow("Threshold Tracker", CV_WINDOW_AUTOSIZE);
-	while(waitKey(1) == -1 && sample_tracker.fetchImageFrame()) {
-		Point_<unsigned> center = sample_tracker.calculateBallImageCenter();
-		imshow("Ball Tracker", sample_tracker.getCameraFrame());
-		imshow("Threshold Tracker", sample_tracker.getThresholdFrame());
+	cv::namedWindow("Ball Tracker", CV_WINDOW_AUTOSIZE);
+	cv::namedWindow("Threshold Tracker", CV_WINDOW_AUTOSIZE);
+	while(cv::waitKey(1) == -1 && sample_tracker.fetchImageFrame()) {
+		cv::Point_<unsigned> center = sample_tracker.calculateBallImageCenter();
+		cv::imshow("Ball Tracker", sample_tracker.getCameraFrame());
+		cv::imshow("Threshold Tracker", sample_tracker.getThresholdFrame());
 	}
 	
 	// Add functionality

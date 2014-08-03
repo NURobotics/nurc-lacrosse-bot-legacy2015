@@ -80,6 +80,25 @@ ThresholdFilter_OBJECTS = \
 ThresholdFilter_EXTERNAL_OBJECTS =
 
 ThresholdFilter: CMakeFiles/ThresholdFilter.dir/src/ThresholdFilter.cpp.o
+ThresholdFilter: /opt/ros/groovy/lib/libopencv_calib3d.so
+ThresholdFilter: /opt/ros/groovy/lib/libopencv_contrib.so
+ThresholdFilter: /opt/ros/groovy/lib/libopencv_core.so
+ThresholdFilter: /opt/ros/groovy/lib/libopencv_features2d.so
+ThresholdFilter: /opt/ros/groovy/lib/libopencv_flann.so
+ThresholdFilter: /opt/ros/groovy/lib/libopencv_gpu.so
+ThresholdFilter: /opt/ros/groovy/lib/libopencv_highgui.so
+ThresholdFilter: /opt/ros/groovy/lib/libopencv_imgproc.so
+ThresholdFilter: /opt/ros/groovy/lib/libopencv_legacy.so
+ThresholdFilter: /opt/ros/groovy/lib/libopencv_ml.so
+ThresholdFilter: /opt/ros/groovy/lib/libopencv_nonfree.so
+ThresholdFilter: /opt/ros/groovy/lib/libopencv_objdetect.so
+ThresholdFilter: /opt/ros/groovy/lib/libopencv_photo.so
+ThresholdFilter: /opt/ros/groovy/lib/libopencv_stitching.so
+ThresholdFilter: /opt/ros/groovy/lib/libopencv_superres.so
+ThresholdFilter: /opt/ros/groovy/lib/libopencv_ts.so
+ThresholdFilter: /opt/ros/groovy/lib/libopencv_video.so
+ThresholdFilter: /opt/ros/groovy/lib/libopencv_videostab.so
+ThresholdFilter: ../lib/libAlgorithms.a
 ThresholdFilter: CMakeFiles/ThresholdFilter.dir/build.make
 ThresholdFilter: CMakeFiles/ThresholdFilter.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable ThresholdFilter"

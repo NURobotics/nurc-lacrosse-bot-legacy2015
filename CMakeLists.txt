@@ -1,21 +1,11 @@
 cmake_minimum_required(VERSION 2.6)
 project(lacrosse-bot)
 
-set(OpenCV_LIBRARIES
-	opencv_core
-	opencv_imgproc
-	opencv_highgui
-	opencv_video
-	opencv_features2d
-	opencv_calib3d
-	opencv_objdetect
-	opencv_contrib
-	opencv_legacy
-	opencv_stitching
-)
+find_package(OpenCV)
 
 include_directories(include)
-link_directories(/usr/local/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
 
 add_definitions(
 	-std=c++0x
@@ -26,7 +16,20 @@ target_link_libraries(BallTracker
 	${OpenCV_LIBRARIES}
 )
 
+add_library(Algorithms
+	src/Algorithm.cpp
+)
+
+add_library(Filters
+	src/ThresholdFilter.cpp
+)
+
+add_library(Trackers
+	src/BallTracker.cpp
+)
+
 add_executable(ThresholdFilter src/ThresholdFilter.cpp)
 target_link_libraries(ThresholdFilter
 	${OpenCV_LIBRARIES}
+	Algorithms
 )

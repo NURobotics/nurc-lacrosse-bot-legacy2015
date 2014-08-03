@@ -53,13 +53,48 @@ CMAKE_SOURCE_DIR = /home/tgd/Code/nurobotics_ws/lacrosse-bot
 CMAKE_BINARY_DIR = /home/tgd/Code/nurobotics_ws/lacrosse-bot/bin
 
 #=============================================================================
+# Target rules for target CMakeFiles/Algorithms.dir
+
+# All Build rule for target.
+CMakeFiles/Algorithms.dir/all:
+	$(MAKE) -f CMakeFiles/Algorithms.dir/build.make CMakeFiles/Algorithms.dir/depend
+	$(MAKE) -f CMakeFiles/Algorithms.dir/build.make CMakeFiles/Algorithms.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/tgd/Code/nurobotics_ws/lacrosse-bot/bin/CMakeFiles  1
+	@echo "Built target Algorithms"
+.PHONY : CMakeFiles/Algorithms.dir/all
+
+# Include target in all.
+all: CMakeFiles/Algorithms.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/Algorithms.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tgd/Code/nurobotics_ws/lacrosse-bot/bin/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Algorithms.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tgd/Code/nurobotics_ws/lacrosse-bot/bin/CMakeFiles 0
+.PHONY : CMakeFiles/Algorithms.dir/rule
+
+# Convenience name for target.
+Algorithms: CMakeFiles/Algorithms.dir/rule
+.PHONY : Algorithms
+
+# clean rule for target.
+CMakeFiles/Algorithms.dir/clean:
+	$(MAKE) -f CMakeFiles/Algorithms.dir/build.make CMakeFiles/Algorithms.dir/clean
+.PHONY : CMakeFiles/Algorithms.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/Algorithms.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/BallTracker.dir
 
 # All Build rule for target.
 CMakeFiles/BallTracker.dir/all:
 	$(MAKE) -f CMakeFiles/BallTracker.dir/build.make CMakeFiles/BallTracker.dir/depend
 	$(MAKE) -f CMakeFiles/BallTracker.dir/build.make CMakeFiles/BallTracker.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/tgd/Code/nurobotics_ws/lacrosse-bot/bin/CMakeFiles  1
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/tgd/Code/nurobotics_ws/lacrosse-bot/bin/CMakeFiles  2
 	@echo "Built target BallTracker"
 .PHONY : CMakeFiles/BallTracker.dir/all
 
@@ -88,13 +123,48 @@ clean: CMakeFiles/BallTracker.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/Filters.dir
+
+# All Build rule for target.
+CMakeFiles/Filters.dir/all:
+	$(MAKE) -f CMakeFiles/Filters.dir/build.make CMakeFiles/Filters.dir/depend
+	$(MAKE) -f CMakeFiles/Filters.dir/build.make CMakeFiles/Filters.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/tgd/Code/nurobotics_ws/lacrosse-bot/bin/CMakeFiles  3
+	@echo "Built target Filters"
+.PHONY : CMakeFiles/Filters.dir/all
+
+# Include target in all.
+all: CMakeFiles/Filters.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/Filters.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tgd/Code/nurobotics_ws/lacrosse-bot/bin/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Filters.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tgd/Code/nurobotics_ws/lacrosse-bot/bin/CMakeFiles 0
+.PHONY : CMakeFiles/Filters.dir/rule
+
+# Convenience name for target.
+Filters: CMakeFiles/Filters.dir/rule
+.PHONY : Filters
+
+# clean rule for target.
+CMakeFiles/Filters.dir/clean:
+	$(MAKE) -f CMakeFiles/Filters.dir/build.make CMakeFiles/Filters.dir/clean
+.PHONY : CMakeFiles/Filters.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/Filters.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/ThresholdFilter.dir
 
 # All Build rule for target.
-CMakeFiles/ThresholdFilter.dir/all:
+CMakeFiles/ThresholdFilter.dir/all: CMakeFiles/Algorithms.dir/all
 	$(MAKE) -f CMakeFiles/ThresholdFilter.dir/build.make CMakeFiles/ThresholdFilter.dir/depend
 	$(MAKE) -f CMakeFiles/ThresholdFilter.dir/build.make CMakeFiles/ThresholdFilter.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/tgd/Code/nurobotics_ws/lacrosse-bot/bin/CMakeFiles  2
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/tgd/Code/nurobotics_ws/lacrosse-bot/bin/CMakeFiles  4
 	@echo "Built target ThresholdFilter"
 .PHONY : CMakeFiles/ThresholdFilter.dir/all
 
@@ -104,7 +174,7 @@ all: CMakeFiles/ThresholdFilter.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ThresholdFilter.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tgd/Code/nurobotics_ws/lacrosse-bot/bin/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tgd/Code/nurobotics_ws/lacrosse-bot/bin/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ThresholdFilter.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/tgd/Code/nurobotics_ws/lacrosse-bot/bin/CMakeFiles 0
 .PHONY : CMakeFiles/ThresholdFilter.dir/rule
@@ -120,6 +190,41 @@ CMakeFiles/ThresholdFilter.dir/clean:
 
 # clean rule for target.
 clean: CMakeFiles/ThresholdFilter.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/Trackers.dir
+
+# All Build rule for target.
+CMakeFiles/Trackers.dir/all:
+	$(MAKE) -f CMakeFiles/Trackers.dir/build.make CMakeFiles/Trackers.dir/depend
+	$(MAKE) -f CMakeFiles/Trackers.dir/build.make CMakeFiles/Trackers.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/tgd/Code/nurobotics_ws/lacrosse-bot/bin/CMakeFiles  5
+	@echo "Built target Trackers"
+.PHONY : CMakeFiles/Trackers.dir/all
+
+# Include target in all.
+all: CMakeFiles/Trackers.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/Trackers.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tgd/Code/nurobotics_ws/lacrosse-bot/bin/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Trackers.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tgd/Code/nurobotics_ws/lacrosse-bot/bin/CMakeFiles 0
+.PHONY : CMakeFiles/Trackers.dir/rule
+
+# Convenience name for target.
+Trackers: CMakeFiles/Trackers.dir/rule
+.PHONY : Trackers
+
+# clean rule for target.
+CMakeFiles/Trackers.dir/clean:
+	$(MAKE) -f CMakeFiles/Trackers.dir/build.make CMakeFiles/Trackers.dir/clean
+.PHONY : CMakeFiles/Trackers.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/Trackers.dir/clean
 .PHONY : clean
 
 #=============================================================================

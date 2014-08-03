@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/lacrosse-bot/algorithm/Algorithm.hpp
+opencv2/core/core.hpp
+-
+opencv2/opencv.hpp
+-
+
+/home/tgd/Code/nurobotics_ws/lacrosse-bot/src/Algorithm.cpp
+lacrosse-bot/algorithm/Algorithm.hpp
+-
+iostream
+-
+
