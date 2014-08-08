@@ -26,8 +26,7 @@ private:
 class Centroid : public Algorithm<Mat&, Point>
 {
 public:
-	Point algorithm(Mat& image);
-	Point operator()(Mat& image) { return algorithm(image); }
+	virtual Point algorithm(Mat& image);
 };
 
 } //namespace nurc

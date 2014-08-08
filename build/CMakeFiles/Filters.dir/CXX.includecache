@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/lacrosse-bot/algorithm/Algorithm.hpp
+iostream
+-
+vector
+-
+opencv2/core/core.hpp
+-
+opencv2/opencv.hpp
+-
+
+../include/lacrosse-bot/filter/Filter.hpp
+opencv2/core/core.hpp
+-
+opencv2/opencv.hpp
+-
+
+../include/lacrosse-bot/filter/ThresholdFilter.hpp
+lacrosse-bot/filter/Filter.hpp
+-
+
+/home/tgd/Code/nurobotics_ws/lacrosse-bot/src/ThresholdFilter.cpp
+iostream
+-
+sstream
+-
+string
+-
+opencv2/highgui/highgui.hpp
+-
+opencv2/imgproc/imgproc.hpp
+-
+lacrosse-bot/filter/ThresholdFilter.hpp
+-
+lacrosse-bot/algorithm/Algorithm.hpp
+-
+

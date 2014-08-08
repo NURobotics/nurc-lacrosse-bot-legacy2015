@@ -75,9 +75,28 @@ int main(int argc, char **argv)
 			cv::cvtColor(image, image, cv::COLOR_BGR2HSV);
 			cv::resize(image, image, cv::Size(0,0), 0.5, 0.5, cv::INTER_LANCZOS4);
 			cv::GaussianBlur(image, image, cv::Size(9,9), 2, 2);
-			cv::imshow("Test Output", t1(image));
 			
-			cv::Point centroid = a1(image);
+			cv::Point centroid = a1(t1(image));
+			cv::cvtColor(image,image,CV_GRAY2BGR);
+			cv::circle(image,	centroid, 2, cv::Scalar(0,0,255), -1);
+
+			/* cv::Point center;
+			std::vector<cv::Vec3f> balls;
+			cv::Canny(image, image, 80, 240, 3);
+			cv::GaussianBlur(image, image, cv::Size(9,9), 2, 2);
+			cv::HoughCircles(image, balls, CV_HOUGH_GRADIENT, 1, image.rows/8, 200, 100, 0, 0);
+
+			for( size_t i = 0; i < balls.size(); i++ ) {
+				center.x = cvRound(balls[i][0]);
+				center.y = cvRound(balls[i][1]);
+				int radius = cvRound(balls[i][2]);
+				
+				cv::circle(image, center, 3, cv::Scalar(0,255,0), -1, 8, 0);
+				cv::circle(image, center, radius, cv::Scalar(0,0,255), 3, 8, 0);
+				std::cout << "Found circle at coordinates: (" << center.x << "," << center.y << ")." << std::endl;
+			}*/
+
+			cv::imshow("Test Output", image);
 			std::cout << "The centroid was calcualted at: (" << centroid.x << ", " << centroid.y << ")" << std::endl;
 			
 		}

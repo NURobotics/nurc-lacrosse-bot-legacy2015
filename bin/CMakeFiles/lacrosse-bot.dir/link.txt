@@ -1,2 +1,0 @@
-/usr/bin/ar cr liblacrosse-bot.a  CMakeFiles/lacrosse-bot.dir/src/ThresholdFilter.cpp.o CMakeFiles/lacrosse-bot.dir/src/BallTracker.cpp.o
-/usr/bin/ranlib liblacrosse-bot.a
