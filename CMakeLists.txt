@@ -15,6 +15,7 @@ add_definitions(
 add_executable(BallTracker src/BallTracker.cpp)
 target_link_libraries(BallTracker
 	${OpenCV_LIBRARIES}
+	${Eigen_LIBRARIES}
 )
 
 add_library(Algorithms

@@ -8,8 +8,7 @@
 #include <opencv2/highgui/highgui.hpp>
 
 
-namespace nurc 
-{
+namespace nurc {
 
 class BallTracker
 {
@@ -48,4 +47,4 @@ protected:
 } // namespace nurc
 
 
-#endif
+#endif // LACROSSE_BOT_BALLTRACKER_H

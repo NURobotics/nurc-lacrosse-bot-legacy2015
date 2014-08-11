@@ -1,7 +1,6 @@
 #ifndef LACROSSSE_BOT_THRESHOLDFILTER_H
 #define LACROSSSE_BOT_THRESHOLDFILTER_H
 
-
 #include <lacrosse-bot/filter/Filter.hpp>
 
 
@@ -10,7 +9,7 @@ namespace nurc {
 using namespace cv;
 using namespace std;
 
-class ThresholdFilter : public Filter
+class ThresholdFilter : public Filter<Mat&, Mat&>
 {
 public:
 	enum class Mode 

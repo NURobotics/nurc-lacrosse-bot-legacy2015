@@ -11,13 +11,12 @@ namespace nurc {
 using namespace cv;
 using namespace std;
 
-class Filter
+template<typename I, typename O> class Filter
 {
 public:
 	Filter() {}
-	virtual Mat& filter(Mat& image) = 0;
-	Mat& operator()(Mat& image) { return filter(image); }
-	
+	virtual O& filter(I& output) = 0;
+	O& operator()(I& input) { return filter(input); }
 private:
 	Filter(const Filter& copy);
 	Filter& operator=(const Filter& copy);
