@@ -1,5 +1,6 @@
 FILE(REMOVE_RECURSE
-  "CMakeFiles/Trackers.dir/src/BallTracker.cpp.o"
+  "CMakeFiles/Trackers.dir/src/Tracker.cpp.o"
+  "CMakeFiles/Trackers.dir/src/Ball2DTracker.cpp.o"
   "../lib/libTrackers.pdb"
   "../lib/libTrackers.a"
 )

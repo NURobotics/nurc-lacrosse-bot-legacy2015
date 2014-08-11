@@ -6,17 +6,7 @@
 
 #IncludeRegexTransform: 
 
-../include/lacrosse-bot/tracker/BallTracker.hpp
-deque
--
-opencv2/opencv.hpp
--
-opencv2/core/core.hpp
--
-opencv2/highgui/highgui.hpp
--
-
 /home/tgd/Code/nurobotics_ws/lacrosse-bot/src/BallTracker.cpp
-lacrosse-bot/tracker/BallTracker.hpp
+lacrosse-bot/tracker/Tracker.hpp
 -
 

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <opencv2/opencv.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <lacrosse-bot/filter/ThresholdFilter.hpp>
@@ -72,7 +73,7 @@ int main(int argc, char **argv)
 		while(cv::waitKey(1) == -1 && video_capture.isOpened()) {
 			video_capture >> image;
 
-			cv::cvtColor(image, image, cv::COLOR_BGR2HSV);
+		cv::cvtColor(image, image, cv::COLOR_BGR2HSV);
 			cv::resize(image, image, cv::Size(0,0), 0.5, 0.5, cv::INTER_LANCZOS4);
 			cv::GaussianBlur(image, image, cv::Size(9,9), 2, 2);
 			

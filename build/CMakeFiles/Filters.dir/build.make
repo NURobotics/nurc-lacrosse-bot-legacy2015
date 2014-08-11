@@ -72,14 +72,39 @@ CMakeFiles/Filters.dir/src/ThresholdFilter.cpp.o.provides: CMakeFiles/Filters.di
 
 CMakeFiles/Filters.dir/src/ThresholdFilter.cpp.o.provides.build: CMakeFiles/Filters.dir/src/ThresholdFilter.cpp.o
 
+CMakeFiles/Filters.dir/src/KalmanFilter.cpp.o: CMakeFiles/Filters.dir/flags.make
+CMakeFiles/Filters.dir/src/KalmanFilter.cpp.o: ../src/KalmanFilter.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/tgd/Code/nurobotics_ws/lacrosse-bot/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/Filters.dir/src/KalmanFilter.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/Filters.dir/src/KalmanFilter.cpp.o -c /home/tgd/Code/nurobotics_ws/lacrosse-bot/src/KalmanFilter.cpp
+
+CMakeFiles/Filters.dir/src/KalmanFilter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Filters.dir/src/KalmanFilter.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tgd/Code/nurobotics_ws/lacrosse-bot/src/KalmanFilter.cpp > CMakeFiles/Filters.dir/src/KalmanFilter.cpp.i
+
+CMakeFiles/Filters.dir/src/KalmanFilter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Filters.dir/src/KalmanFilter.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tgd/Code/nurobotics_ws/lacrosse-bot/src/KalmanFilter.cpp -o CMakeFiles/Filters.dir/src/KalmanFilter.cpp.s
+
+CMakeFiles/Filters.dir/src/KalmanFilter.cpp.o.requires:
+.PHONY : CMakeFiles/Filters.dir/src/KalmanFilter.cpp.o.requires
+
+CMakeFiles/Filters.dir/src/KalmanFilter.cpp.o.provides: CMakeFiles/Filters.dir/src/KalmanFilter.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Filters.dir/build.make CMakeFiles/Filters.dir/src/KalmanFilter.cpp.o.provides.build
+.PHONY : CMakeFiles/Filters.dir/src/KalmanFilter.cpp.o.provides
+
+CMakeFiles/Filters.dir/src/KalmanFilter.cpp.o.provides.build: CMakeFiles/Filters.dir/src/KalmanFilter.cpp.o
+
 # Object files for target Filters
 Filters_OBJECTS = \
-"CMakeFiles/Filters.dir/src/ThresholdFilter.cpp.o"
+"CMakeFiles/Filters.dir/src/ThresholdFilter.cpp.o" \
+"CMakeFiles/Filters.dir/src/KalmanFilter.cpp.o"
 
 # External object files for target Filters
 Filters_EXTERNAL_OBJECTS =
 
 ../lib/libFilters.a: CMakeFiles/Filters.dir/src/ThresholdFilter.cpp.o
+../lib/libFilters.a: CMakeFiles/Filters.dir/src/KalmanFilter.cpp.o
 ../lib/libFilters.a: CMakeFiles/Filters.dir/build.make
 ../lib/libFilters.a: CMakeFiles/Filters.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX static library ../lib/libFilters.a"
@@ -91,6 +116,7 @@ CMakeFiles/Filters.dir/build: ../lib/libFilters.a
 .PHONY : CMakeFiles/Filters.dir/build
 
 CMakeFiles/Filters.dir/requires: CMakeFiles/Filters.dir/src/ThresholdFilter.cpp.o.requires
+CMakeFiles/Filters.dir/requires: CMakeFiles/Filters.dir/src/KalmanFilter.cpp.o.requires
 .PHONY : CMakeFiles/Filters.dir/requires
 
 CMakeFiles/Filters.dir/clean:

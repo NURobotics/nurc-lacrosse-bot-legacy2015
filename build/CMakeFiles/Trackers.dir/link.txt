@@ -1,2 +1,2 @@
-/usr/bin/ar cr ../lib/libTrackers.a  CMakeFiles/Trackers.dir/src/BallTracker.cpp.o
+/usr/bin/ar cr ../lib/libTrackers.a  CMakeFiles/Trackers.dir/src/Tracker.cpp.o CMakeFiles/Trackers.dir/src/Ball2DTracker.cpp.o
 /usr/bin/ranlib ../lib/libTrackers.a

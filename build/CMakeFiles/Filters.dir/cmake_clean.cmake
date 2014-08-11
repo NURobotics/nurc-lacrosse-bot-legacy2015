@@ -1,5 +1,6 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/Filters.dir/src/ThresholdFilter.cpp.o"
+  "CMakeFiles/Filters.dir/src/KalmanFilter.cpp.o"
   "../lib/libFilters.pdb"
   "../lib/libFilters.a"
 )

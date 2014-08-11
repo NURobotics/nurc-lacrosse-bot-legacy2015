@@ -49,37 +49,62 @@ include CMakeFiles/Trackers.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Trackers.dir/flags.make
 
-CMakeFiles/Trackers.dir/src/BallTracker.cpp.o: CMakeFiles/Trackers.dir/flags.make
-CMakeFiles/Trackers.dir/src/BallTracker.cpp.o: ../src/BallTracker.cpp
+CMakeFiles/Trackers.dir/src/Tracker.cpp.o: CMakeFiles/Trackers.dir/flags.make
+CMakeFiles/Trackers.dir/src/Tracker.cpp.o: ../src/Tracker.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/tgd/Code/nurobotics_ws/lacrosse-bot/build/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/Trackers.dir/src/BallTracker.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/Trackers.dir/src/BallTracker.cpp.o -c /home/tgd/Code/nurobotics_ws/lacrosse-bot/src/BallTracker.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/Trackers.dir/src/Tracker.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/Trackers.dir/src/Tracker.cpp.o -c /home/tgd/Code/nurobotics_ws/lacrosse-bot/src/Tracker.cpp
 
-CMakeFiles/Trackers.dir/src/BallTracker.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Trackers.dir/src/BallTracker.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tgd/Code/nurobotics_ws/lacrosse-bot/src/BallTracker.cpp > CMakeFiles/Trackers.dir/src/BallTracker.cpp.i
+CMakeFiles/Trackers.dir/src/Tracker.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Trackers.dir/src/Tracker.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tgd/Code/nurobotics_ws/lacrosse-bot/src/Tracker.cpp > CMakeFiles/Trackers.dir/src/Tracker.cpp.i
 
-CMakeFiles/Trackers.dir/src/BallTracker.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Trackers.dir/src/BallTracker.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tgd/Code/nurobotics_ws/lacrosse-bot/src/BallTracker.cpp -o CMakeFiles/Trackers.dir/src/BallTracker.cpp.s
+CMakeFiles/Trackers.dir/src/Tracker.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Trackers.dir/src/Tracker.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tgd/Code/nurobotics_ws/lacrosse-bot/src/Tracker.cpp -o CMakeFiles/Trackers.dir/src/Tracker.cpp.s
 
-CMakeFiles/Trackers.dir/src/BallTracker.cpp.o.requires:
-.PHONY : CMakeFiles/Trackers.dir/src/BallTracker.cpp.o.requires
+CMakeFiles/Trackers.dir/src/Tracker.cpp.o.requires:
+.PHONY : CMakeFiles/Trackers.dir/src/Tracker.cpp.o.requires
 
-CMakeFiles/Trackers.dir/src/BallTracker.cpp.o.provides: CMakeFiles/Trackers.dir/src/BallTracker.cpp.o.requires
-	$(MAKE) -f CMakeFiles/Trackers.dir/build.make CMakeFiles/Trackers.dir/src/BallTracker.cpp.o.provides.build
-.PHONY : CMakeFiles/Trackers.dir/src/BallTracker.cpp.o.provides
+CMakeFiles/Trackers.dir/src/Tracker.cpp.o.provides: CMakeFiles/Trackers.dir/src/Tracker.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Trackers.dir/build.make CMakeFiles/Trackers.dir/src/Tracker.cpp.o.provides.build
+.PHONY : CMakeFiles/Trackers.dir/src/Tracker.cpp.o.provides
 
-CMakeFiles/Trackers.dir/src/BallTracker.cpp.o.provides.build: CMakeFiles/Trackers.dir/src/BallTracker.cpp.o
+CMakeFiles/Trackers.dir/src/Tracker.cpp.o.provides.build: CMakeFiles/Trackers.dir/src/Tracker.cpp.o
+
+CMakeFiles/Trackers.dir/src/Ball2DTracker.cpp.o: CMakeFiles/Trackers.dir/flags.make
+CMakeFiles/Trackers.dir/src/Ball2DTracker.cpp.o: ../src/Ball2DTracker.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/tgd/Code/nurobotics_ws/lacrosse-bot/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/Trackers.dir/src/Ball2DTracker.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/Trackers.dir/src/Ball2DTracker.cpp.o -c /home/tgd/Code/nurobotics_ws/lacrosse-bot/src/Ball2DTracker.cpp
+
+CMakeFiles/Trackers.dir/src/Ball2DTracker.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Trackers.dir/src/Ball2DTracker.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tgd/Code/nurobotics_ws/lacrosse-bot/src/Ball2DTracker.cpp > CMakeFiles/Trackers.dir/src/Ball2DTracker.cpp.i
+
+CMakeFiles/Trackers.dir/src/Ball2DTracker.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Trackers.dir/src/Ball2DTracker.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tgd/Code/nurobotics_ws/lacrosse-bot/src/Ball2DTracker.cpp -o CMakeFiles/Trackers.dir/src/Ball2DTracker.cpp.s
+
+CMakeFiles/Trackers.dir/src/Ball2DTracker.cpp.o.requires:
+.PHONY : CMakeFiles/Trackers.dir/src/Ball2DTracker.cpp.o.requires
+
+CMakeFiles/Trackers.dir/src/Ball2DTracker.cpp.o.provides: CMakeFiles/Trackers.dir/src/Ball2DTracker.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Trackers.dir/build.make CMakeFiles/Trackers.dir/src/Ball2DTracker.cpp.o.provides.build
+.PHONY : CMakeFiles/Trackers.dir/src/Ball2DTracker.cpp.o.provides
+
+CMakeFiles/Trackers.dir/src/Ball2DTracker.cpp.o.provides.build: CMakeFiles/Trackers.dir/src/Ball2DTracker.cpp.o
 
 # Object files for target Trackers
 Trackers_OBJECTS = \
-"CMakeFiles/Trackers.dir/src/BallTracker.cpp.o"
+"CMakeFiles/Trackers.dir/src/Tracker.cpp.o" \
+"CMakeFiles/Trackers.dir/src/Ball2DTracker.cpp.o"
 
 # External object files for target Trackers
 Trackers_EXTERNAL_OBJECTS =
 
-../lib/libTrackers.a: CMakeFiles/Trackers.dir/src/BallTracker.cpp.o
+../lib/libTrackers.a: CMakeFiles/Trackers.dir/src/Tracker.cpp.o
+../lib/libTrackers.a: CMakeFiles/Trackers.dir/src/Ball2DTracker.cpp.o
 ../lib/libTrackers.a: CMakeFiles/Trackers.dir/build.make
 ../lib/libTrackers.a: CMakeFiles/Trackers.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX static library ../lib/libTrackers.a"
@@ -90,7 +115,8 @@ Trackers_EXTERNAL_OBJECTS =
 CMakeFiles/Trackers.dir/build: ../lib/libTrackers.a
 .PHONY : CMakeFiles/Trackers.dir/build
 
-CMakeFiles/Trackers.dir/requires: CMakeFiles/Trackers.dir/src/BallTracker.cpp.o.requires
+CMakeFiles/Trackers.dir/requires: CMakeFiles/Trackers.dir/src/Tracker.cpp.o.requires
+CMakeFiles/Trackers.dir/requires: CMakeFiles/Trackers.dir/src/Ball2DTracker.cpp.o.requires
 .PHONY : CMakeFiles/Trackers.dir/requires
 
 CMakeFiles/Trackers.dir/clean:

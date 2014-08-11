@@ -3,7 +3,7 @@
 
 namespace nurc {
 
-VectorXd& filter(VectorXd measurement)
+VectorXd& KalmanFilter::filter(VectorXd &measurement)
 {
 	z = measurement;
 	update();
@@ -11,7 +11,7 @@ VectorXd& filter(VectorXd measurement)
 	return x;
 }
 
-void update()
+void KalmanFilter::update()
 {
 	K.resize(n_dims_, n_dims_);
 	K = P*H.transpose()*(H*P*H.transpose() + R).inverse();
@@ -19,7 +19,7 @@ void update()
 	P = (MatrixXd::Identity(n_dims_, n_dims_) - K*H)*P;
 }
 
-void predict()
+void KalmanFilter::predict()
 {
 	x = F*x + u;
 	P = F*P*F.transpose();
@@ -40,22 +40,22 @@ void KalmanFilter::setVariances(vector<double> variances)
 	}
 }
 
-void KalmanFilter::setTransitionMatrix(MatrixXd &transition_m)
+void KalmanFilter::setNoiseMatrix(MatrixXd &noise_m)
+{
+	if(noise_m.rows() == noise_m.cols() && noise_m.rows() == n_dims_)
+		P = noise_m;
+}
+
+void KalmanFilter::setTransitionTransform(MatrixXd &transition_m)
 {
 	if(transition_m.rows() == transition_m.cols() && transition_m.rows() == n_dims_)
 		P = transition_m;
 }
 
-void KalmanFilter::setMeasurementMatrix(MatrixXd &measurement_m)
+void KalmanFilter::setMeasurementTransform(MatrixXd &measurement_m)
 {
 	if(measurement_m.rows() == measurement_m.cols() && measurement_m.rows() == n_dims_)
 		P = measurement_m;
-}
-
-void KalmanFilter::setNoiseMatrix(MatrixXd &noise_m)
-{
-	if(noise_m.rows() == noise_m.cols() && noise_m.rows() == n_dims_)
-		P = noise_m;
 }
 
 } // namespace nurc
