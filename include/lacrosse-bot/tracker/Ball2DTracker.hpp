@@ -20,11 +20,20 @@ class Ball2DTracker : public Tracker
 {
 public:
 	Ball2DTracker();
+
+	// Overloaded Functions
+	bool captureImageFrame();
 	
 	// Helper Functions
 	Point getBallPosition();
 	Point getBallVelocity();
-	Vector4d& getBallState();
+	VectorXd& getBallState() { return kalman_f_.getPredictedState(); }
+	
+	cv::Mat& getTransformedImage() { return transformed_image_; }
+	cv::Point getMeasuredCenter() { return current_centroid_; }
+	cv::Point getEstimatedCenter() { VectorXd estimate = kalman_f_.getPredictedState(); return cv::Point(estimate(0), estimate(1)); }
+
+	void update();
 	
 protected:
 	// Filters
@@ -35,7 +44,9 @@ protected:
 	Centroid centroid_a_;
 	
 	// Frames
-	cv::Mat transformed_frame_;
+	cv::Mat transformed_image_;
+	
+	cv::Point current_centroid_;
 
 };
 

@@ -14,8 +14,8 @@
 # EXTERNAL cache entries
 ########################
 
-//Dependencies for target
-Algorithms_LIB_DEPENDS:STATIC=
+//Dependencies for the target
+Algorithms_LIB_DEPENDS:STATIC=debug;/opt/ros/groovy/lib/libopencv_calib3d.so;debug;/opt/ros/groovy/lib/libopencv_contrib.so;debug;/opt/ros/groovy/lib/libopencv_core.so;debug;/opt/ros/groovy/lib/libopencv_features2d.so;debug;/opt/ros/groovy/lib/libopencv_flann.so;debug;/opt/ros/groovy/lib/libopencv_gpu.so;debug;/opt/ros/groovy/lib/libopencv_highgui.so;debug;/opt/ros/groovy/lib/libopencv_imgproc.so;debug;/opt/ros/groovy/lib/libopencv_legacy.so;debug;/opt/ros/groovy/lib/libopencv_ml.so;debug;/opt/ros/groovy/lib/libopencv_nonfree.so;debug;/opt/ros/groovy/lib/libopencv_objdetect.so;debug;/opt/ros/groovy/lib/libopencv_photo.so;debug;/opt/ros/groovy/lib/libopencv_stitching.so;debug;/opt/ros/groovy/lib/libopencv_superres.so;debug;/opt/ros/groovy/lib/libopencv_ts.so;debug;/opt/ros/groovy/lib/libopencv_video.so;debug;/opt/ros/groovy/lib/libopencv_videostab.so;optimized;/opt/ros/groovy/lib/libopencv_calib3d.so;optimized;/opt/ros/groovy/lib/libopencv_contrib.so;optimized;/opt/ros/groovy/lib/libopencv_core.so;optimized;/opt/ros/groovy/lib/libopencv_features2d.so;optimized;/opt/ros/groovy/lib/libopencv_flann.so;optimized;/opt/ros/groovy/lib/libopencv_gpu.so;optimized;/opt/ros/groovy/lib/libopencv_highgui.so;optimized;/opt/ros/groovy/lib/libopencv_imgproc.so;optimized;/opt/ros/groovy/lib/libopencv_legacy.so;optimized;/opt/ros/groovy/lib/libopencv_ml.so;optimized;/opt/ros/groovy/lib/libopencv_nonfree.so;optimized;/opt/ros/groovy/lib/libopencv_objdetect.so;optimized;/opt/ros/groovy/lib/libopencv_photo.so;optimized;/opt/ros/groovy/lib/libopencv_stitching.so;optimized;/opt/ros/groovy/lib/libopencv_superres.so;optimized;/opt/ros/groovy/lib/libopencv_ts.so;optimized;/opt/ros/groovy/lib/libopencv_video.so;optimized;/opt/ros/groovy/lib/libopencv_videostab.so;
 
 //Path to a program.
 CMAKE_AR:FILEPATH=/usr/bin/ar
@@ -163,8 +163,8 @@ Eigen3_DIR:PATH=Eigen3_DIR-NOTFOUND
 //The directory containing a CMake configuration file for Eigen.
 Eigen_DIR:PATH=/opt/ros/hydro/share/eigen/cmake
 
-//Dependencies for target
-Filters_LIB_DEPENDS:STATIC=
+//Dependencies for the target
+Filters_LIB_DEPENDS:STATIC=general;Algorithms;debug;/opt/ros/groovy/lib/libopencv_calib3d.so;debug;/opt/ros/groovy/lib/libopencv_contrib.so;debug;/opt/ros/groovy/lib/libopencv_core.so;debug;/opt/ros/groovy/lib/libopencv_features2d.so;debug;/opt/ros/groovy/lib/libopencv_flann.so;debug;/opt/ros/groovy/lib/libopencv_gpu.so;debug;/opt/ros/groovy/lib/libopencv_highgui.so;debug;/opt/ros/groovy/lib/libopencv_imgproc.so;debug;/opt/ros/groovy/lib/libopencv_legacy.so;debug;/opt/ros/groovy/lib/libopencv_ml.so;debug;/opt/ros/groovy/lib/libopencv_nonfree.so;debug;/opt/ros/groovy/lib/libopencv_objdetect.so;debug;/opt/ros/groovy/lib/libopencv_photo.so;debug;/opt/ros/groovy/lib/libopencv_stitching.so;debug;/opt/ros/groovy/lib/libopencv_superres.so;debug;/opt/ros/groovy/lib/libopencv_ts.so;debug;/opt/ros/groovy/lib/libopencv_video.so;debug;/opt/ros/groovy/lib/libopencv_videostab.so;optimized;/opt/ros/groovy/lib/libopencv_calib3d.so;optimized;/opt/ros/groovy/lib/libopencv_contrib.so;optimized;/opt/ros/groovy/lib/libopencv_core.so;optimized;/opt/ros/groovy/lib/libopencv_features2d.so;optimized;/opt/ros/groovy/lib/libopencv_flann.so;optimized;/opt/ros/groovy/lib/libopencv_gpu.so;optimized;/opt/ros/groovy/lib/libopencv_highgui.so;optimized;/opt/ros/groovy/lib/libopencv_imgproc.so;optimized;/opt/ros/groovy/lib/libopencv_legacy.so;optimized;/opt/ros/groovy/lib/libopencv_ml.so;optimized;/opt/ros/groovy/lib/libopencv_nonfree.so;optimized;/opt/ros/groovy/lib/libopencv_objdetect.so;optimized;/opt/ros/groovy/lib/libopencv_photo.so;optimized;/opt/ros/groovy/lib/libopencv_stitching.so;optimized;/opt/ros/groovy/lib/libopencv_superres.so;optimized;/opt/ros/groovy/lib/libopencv_ts.so;optimized;/opt/ros/groovy/lib/libopencv_video.so;optimized;/opt/ros/groovy/lib/libopencv_videostab.so;
 
 //Path where debug 3rdpaty OpenCV dependencies are located
 OpenCV_3RDPARTY_LIB_DIR_DBG:PATH=/opt/ros/groovy/share/OpenCV/3rdparty/lib
@@ -186,8 +186,8 @@ OpenCV_LIB_DIR_OPT:PATH=/opt/ros/groovy/lib
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 
-//Dependencies for target
-Trackers_LIB_DEPENDS:STATIC=
+//Dependencies for the target
+Trackers_LIB_DEPENDS:STATIC=general;Algorithms;general;Filters;debug;/opt/ros/groovy/lib/libopencv_calib3d.so;debug;/opt/ros/groovy/lib/libopencv_contrib.so;debug;/opt/ros/groovy/lib/libopencv_core.so;debug;/opt/ros/groovy/lib/libopencv_features2d.so;debug;/opt/ros/groovy/lib/libopencv_flann.so;debug;/opt/ros/groovy/lib/libopencv_gpu.so;debug;/opt/ros/groovy/lib/libopencv_highgui.so;debug;/opt/ros/groovy/lib/libopencv_imgproc.so;debug;/opt/ros/groovy/lib/libopencv_legacy.so;debug;/opt/ros/groovy/lib/libopencv_ml.so;debug;/opt/ros/groovy/lib/libopencv_nonfree.so;debug;/opt/ros/groovy/lib/libopencv_objdetect.so;debug;/opt/ros/groovy/lib/libopencv_photo.so;debug;/opt/ros/groovy/lib/libopencv_stitching.so;debug;/opt/ros/groovy/lib/libopencv_superres.so;debug;/opt/ros/groovy/lib/libopencv_ts.so;debug;/opt/ros/groovy/lib/libopencv_video.so;debug;/opt/ros/groovy/lib/libopencv_videostab.so;optimized;/opt/ros/groovy/lib/libopencv_calib3d.so;optimized;/opt/ros/groovy/lib/libopencv_contrib.so;optimized;/opt/ros/groovy/lib/libopencv_core.so;optimized;/opt/ros/groovy/lib/libopencv_features2d.so;optimized;/opt/ros/groovy/lib/libopencv_flann.so;optimized;/opt/ros/groovy/lib/libopencv_gpu.so;optimized;/opt/ros/groovy/lib/libopencv_highgui.so;optimized;/opt/ros/groovy/lib/libopencv_imgproc.so;optimized;/opt/ros/groovy/lib/libopencv_legacy.so;optimized;/opt/ros/groovy/lib/libopencv_ml.so;optimized;/opt/ros/groovy/lib/libopencv_nonfree.so;optimized;/opt/ros/groovy/lib/libopencv_objdetect.so;optimized;/opt/ros/groovy/lib/libopencv_photo.so;optimized;/opt/ros/groovy/lib/libopencv_stitching.so;optimized;/opt/ros/groovy/lib/libopencv_superres.so;optimized;/opt/ros/groovy/lib/libopencv_ts.so;optimized;/opt/ros/groovy/lib/libopencv_video.so;optimized;/opt/ros/groovy/lib/libopencv_videostab.so;
 
 //Value Computed by CMake
 lacrosse-bot_BINARY_DIR:STATIC=/home/tgd/Code/nurobotics_ws/lacrosse-bot/build

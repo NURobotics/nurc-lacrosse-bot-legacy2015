@@ -11,8 +11,9 @@ SET(CMAKE_FORCE_UNIX_PATHS 1)
 # The C and CXX include file search paths:
 SET(CMAKE_C_INCLUDE_PATH
   "../include"
+  "/opt/ros/groovy/include/opencv"
+  "/opt/ros/groovy/include"
   "/usr/include/eigen3"
-  "/usr/local/include/opencv2"
   )
 SET(CMAKE_CXX_INCLUDE_PATH ${CMAKE_C_INCLUDE_PATH})
 SET(CMAKE_Fortran_INCLUDE_PATH ${CMAKE_C_INCLUDE_PATH})

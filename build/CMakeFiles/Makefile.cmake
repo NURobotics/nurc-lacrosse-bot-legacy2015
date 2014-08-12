@@ -48,8 +48,8 @@ SET(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 SET(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/Algorithms.dir/DependInfo.cmake"
-  "CMakeFiles/Ball2DTracker.dir/DependInfo.cmake"
+  "CMakeFiles/Ball2DTrackerTest.dir/DependInfo.cmake"
   "CMakeFiles/Filters.dir/DependInfo.cmake"
-  "CMakeFiles/ThresholdFilter.dir/DependInfo.cmake"
+  "CMakeFiles/ThresholdFilterTest.dir/DependInfo.cmake"
   "CMakeFiles/Trackers.dir/DependInfo.cmake"
   )

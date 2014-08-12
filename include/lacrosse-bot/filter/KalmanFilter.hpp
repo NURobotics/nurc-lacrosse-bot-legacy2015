@@ -23,7 +23,12 @@ public:
 		x(n_dims_),
 		z(n_dims_),
 		u(n_dims_),
-		K(n_dims_, n_dims_) {}
+		K(n_dims_, n_dims_) 
+	{
+		// Zero out
+		x = VectorXd::Zero(n_dims_);
+		z = VectorXd::Zero(n_dims_);
+	}
 
 	virtual VectorXd& filter(VectorXd &measurement);
 
@@ -36,14 +41,17 @@ public:
 	void setNoiseMatrix(MatrixXd &noise_m);
 	void setTransitionTransform(MatrixXd &transition_m);
 	void setMeasurementTransform(MatrixXd &measurement_m);
-
+	void setMotionVector(VectorXd &motion_v);
+	void setMeasurementVector(VectorXd &measurement_v);
+	
 	MatrixXd& getCovarianceMatrix() { return P; }
 	MatrixXd& getNoiseMatrix() { return R; }
 	MatrixXd& getTransitionTransform() { return F; }
 	MatrixXd& getMeasurementTransform() { return H; }
+	VectorXd& getPredictedState() { return x; }
+	VectorXd& getMeasuredState() { return z; }
 	
 	unsigned int getNDims() { return n_dims_; }
-	
 protected:
 	unsigned int n_dims_;
 	
