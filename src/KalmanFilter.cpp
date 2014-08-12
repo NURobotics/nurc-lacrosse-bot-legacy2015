@@ -48,12 +48,12 @@ void KalmanFilter::setNoiseMatrix(MatrixXd &noise_m)
 void KalmanFilter::setTransitionTransform(MatrixXd &transition_m)
 {
 	if(transition_m.rows() == transition_m.cols() && transition_m.rows() == n_dims_)
-		P = transition_m;
+		F = transition_m;
 }
 
 void KalmanFilter::setMeasurementTransform(MatrixXd &measurement_m)
 {
-	P = measurement_m;
+	H = measurement_m;
 }
 
 void KalmanFilter::setMeasurementVector(VectorXd &measurement_v)
