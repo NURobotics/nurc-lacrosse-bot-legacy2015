@@ -8,10 +8,15 @@ Key Files
 ---
 
 #### Trackers
-+ BallTracker
++ Tracker
++ Ball2DTracker
 
 #### Filters
 + ThresholdFilter
++ KalmanFilter
+
+#### Algorithms
++ Centroid
 
 
 CMake

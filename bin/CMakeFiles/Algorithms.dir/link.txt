@@ -1,0 +1,2 @@
+/usr/bin/ar cr ../lib/libAlgorithms.a  CMakeFiles/Algorithms.dir/src/Algorithm.cpp.o
+/usr/bin/ranlib ../lib/libAlgorithms.a

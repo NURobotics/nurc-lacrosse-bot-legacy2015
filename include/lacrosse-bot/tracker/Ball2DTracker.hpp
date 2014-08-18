@@ -27,15 +27,15 @@ public:
 	// Helper Functions
 	Point getBallPosition();
 	Point getBallVelocity();
-	VectorXd& getBallState() { return kalman_f_.getPredictedState(); }
+	Vector4d& getBallState() { return kalman_f_.getPredictedState(); }
 	
 	cv::Mat& getTransformedImage() { return transformed_image_; }
 	cv::Point getMeasuredCenter() { return current_centroid_; }
-	cv::Point getEstimatedCenter() { VectorXd estimate = kalman_f_.getPredictedState(); return cv::Point(estimate(0), estimate(1)); }
+	cv::Point getEstimatedCenter() { Vector4d estimate = kalman_f_.getPredictedState(); return cv::Point(estimate(0,0), estimate(1,0)); }
 
 	void update();
 	
-protected:
+//protected:
 	// Filters
 	ThresholdFilter threshold_f_;
 	KalmanFilter kalman_f_;

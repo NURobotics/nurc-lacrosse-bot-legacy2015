@@ -11,58 +11,49 @@ using namespace cv;
 using namespace Eigen;
 using namespace std;
 
-class KalmanFilter : public Filter<VectorXd&, VectorXd&> 
+class KalmanFilter : public Filter<Vector2d&, Vector4d&> 
 {
 public:
-	KalmanFilter(unsigned int n_dims = 4) :
-		n_dims_(n_dims_),
-		P(n_dims_, n_dims_),
-		F(n_dims_, n_dims_),
-		H(n_dims_, n_dims_),
-		R(n_dims_, n_dims_),
-		x(n_dims_),
-		z(n_dims_),
-		u(n_dims_),
-		K(n_dims_, n_dims_) 
+
+	KalmanFilter()
 	{
 		// Zero out
-		x = VectorXd::Zero(n_dims_);
-		z = VectorXd::Zero(n_dims_);
+		x = Vector4d::Zero();
+		z = Vector2d::Zero();
 	}
 
-	virtual VectorXd& filter(VectorXd &measurement);
+	virtual Vector4d& filter(Vector2d &measurement);
 
 	void predict();
 	void update();
 
 	// Allow encapsulation
-	void setCovarianceMatrix(MatrixXd &covariance_m);
+	void setCovarianceMatrix(Matrix4d &covariance_m);
 	void setVariances(vector<double> variances);
-	void setNoiseMatrix(MatrixXd &noise_m);
-	void setTransitionTransform(MatrixXd &transition_m);
-	void setMeasurementTransform(MatrixXd &measurement_m);
-	void setMotionVector(VectorXd &motion_v);
-	void setMeasurementVector(VectorXd &measurement_v);
+	void setNoiseMatrix(Matrix2d &noise_m);
+	void setTransitionTransform(Matrix4d &transition_m);
+	void setMeasurementTransform(Matrix<double,2,4> &measurement_m);
+	void setMotionVector(Vector4d &motion_v);
+	void setMeasurementVector(Vector2d &measurement_v);
 	
-	MatrixXd& getCovarianceMatrix() { return P; }
-	MatrixXd& getNoiseMatrix() { return R; }
-	MatrixXd& getTransitionTransform() { return F; }
-	MatrixXd& getMeasurementTransform() { return H; }
-	VectorXd& getPredictedState() { return x; }
-	VectorXd& getMeasuredState() { return z; }
+	Matrix4d& getCovarianceMatrix() { return P; }
+	Matrix2d& getNoiseMatrix() { return R; }
+	Matrix4d& getTransitionTransform() { return F; }
+	Matrix<double,2,4>& getMeasurementTransform() { return H; }
+	Vector4d& getPredictedState() { return x; }
+	Vector2d& getMeasuredState() { return z; }
 	
-	unsigned int getNDims() { return n_dims_; }
 protected:
-	unsigned int n_dims_;
-	
-	MatrixXd P; // Covariance Matrix
-	MatrixXd F; // Transition Transform
-	MatrixXd H; // Measurement Transform
-	MatrixXd R; // Measurement Noise Matrix
-	VectorXd x; // Predicted State
-	VectorXd z; // Measured State
-	VectorXd u; // Change in State
-	MatrixXd K; // Kalman Gain
+
+	Matrix4d P; // Covariance Matrix
+	Matrix4d F; // Transition Transform
+	Matrix<double,2,4> H; // Measurement Transform
+	Matrix2d R; // Measurement Noise Matrix
+	Vector4d x; // Predicted State
+	Vector2d z; // Measured State
+	Vector4d u; // Change in State
+	Matrix<double,4,2> K; // Kalman Gain
+
 };
 
 } // namespace nurc

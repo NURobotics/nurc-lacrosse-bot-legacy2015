@@ -63,6 +63,8 @@ opencv2/highgui/highgui.hpp
 /home/tgd/Code/nurobotics_ws/lacrosse-bot/src/Ball2DTrackerTest.cpp
 lacrosse-bot/tracker/Ball2DTracker.hpp
 -
+lacrosse-bot/filter/KalmanFilter.hpp
+-
 
 /opt/ros/groovy/include/opencv2/calib3d/calib3d.hpp
 opencv2/core/core.hpp

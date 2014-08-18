@@ -18,24 +18,10 @@ Eigen/Dense
 lacrosse-bot/filter/Filter.hpp
 -
 
-<<<<<<< HEAD
-=======
-../include/lacrosse-bot/filter/ThresholdFilter.hpp
-lacrosse-bot/filter/Filter.hpp
--
-
->>>>>>> 5e85e96cb9d14c69b56a2d2f6855f691735e5792
 /home/tgd/Code/nurobotics_ws/lacrosse-bot/src/KalmanFilter.cpp
 lacrosse-bot/filter/KalmanFilter.hpp
 -
 
-<<<<<<< HEAD
-=======
-/home/tgd/Code/nurobotics_ws/lacrosse-bot/src/ThresholdFilter.cpp
-lacrosse-bot/filter/ThresholdFilter.hpp
--
-
->>>>>>> 5e85e96cb9d14c69b56a2d2f6855f691735e5792
 /opt/ros/groovy/include/opencv2/calib3d/calib3d.hpp
 opencv2/core/core.hpp
 /opt/ros/groovy/include/opencv2/calib3d/opencv2/core/core.hpp

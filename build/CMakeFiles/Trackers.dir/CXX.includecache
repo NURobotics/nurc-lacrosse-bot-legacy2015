@@ -64,10 +64,6 @@ opencv2/highgui/highgui.hpp
 lacrosse-bot/tracker/Ball2DTracker.hpp
 -
 
-/home/tgd/Code/nurobotics_ws/lacrosse-bot/src/Tracker.cpp
-lacrosse-bot/tracker/Tracker.hpp
--
-
 /opt/ros/groovy/include/opencv2/calib3d/calib3d.hpp
 opencv2/core/core.hpp
 /opt/ros/groovy/include/opencv2/calib3d/opencv2/core/core.hpp

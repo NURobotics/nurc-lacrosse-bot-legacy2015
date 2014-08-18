@@ -1,4 +1,5 @@
 #include <lacrosse-bot/tracker/Ball2DTracker.hpp>
+#include <lacrosse-bot/filter/KalmanFilter.hpp>
 
 
 int main(int argc, char **argv)
@@ -12,10 +13,10 @@ int main(int argc, char **argv)
   cv::namedWindow("Transformed Image", CV_WINDOW_AUTOSIZE);
 
   if(response == 'y') {
-    nurc::Ball2DTracker* tracker = new nurc::Ball2DTracker;
+    nurc::Ball2DTracker tracker;
 
     while(cv::waitKey(1) == -1) {
-			/* tracker.captureImageFrame();
+			tracker.captureImageFrame();
       cv::imshow("Feed Image", tracker.getImage());
       cv::imshow("Transformed Image", tracker.getTransformedImage());
 
@@ -23,10 +24,9 @@ int main(int argc, char **argv)
       cv::Point estimated_center = tracker.getEstimatedCenter();
 
       std::cout << "The measured centroid was calcualted at: (" << measured_center.x << ", " << measured_center.y << ")" << std::endl;
-      std::cout << "The filtered estimate was calculated at: (" << estimated_center.x << ", " << estimated_center.y << ")" << std::endl;*/
+      std::cout << "The filtered estimate was calculated at: (" << estimated_center.x << ", " << estimated_center.y << ")" << std::endl;
     }
 
-		delete tracker;
   }
 
   std::cout << std::endl << "Ball2DTracker main test completed." << std::endl;
