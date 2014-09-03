@@ -7,19 +7,51 @@ Vector4d& KalmanFilter::filter(Vector2d &measurement)
 {
 	z = measurement;
 	update();
-	predict();
+	//predict();
 	return x;
 }
 
 void KalmanFilter::update()
 {
-	K = P*H.transpose()*(H*P*H.transpose() + R).inverse();
-	x = x + K*(z - H*x);
-	//P = (Matrix4d::Identity() - K*H)*P;
-	/*cout << "--- UPDATE STEP ---" << endl;
-	cout << "Kalman Gain: " << endl << K << endl;
-	cout << "x: " << endl << x << endl;
-	cout << "Covariance: " << endl << P << endl << endl;*/
+  Matrix2d Ctemp = (H*P*H.transpose() + R);
+  JacobiSVD<Matrix2d> jsvd(Ctemp);
+  Vector2d singulars = jsvd.singularValues();
+  Matrix2d S = Matrix2d::Zero();
+  S(0,0) = (singulars(0,0) < 0.000001) ? 0: singulars(0,0);
+  S(1,1) = (singulars(1,1) < 0.000001) ? 0: singulars(1,1);
+
+	Matrix<double,4,2> Ktemp = P*H.transpose()*(jsvd.matrixV()*S*(jsvd.matrixV().transpose()));
+	Vector4d xtemp = x + K*(z - H*x);
+	Matrix4d T = P;
+  P = (Matrix4d::Identity() - K*H)*P;
+  
+  cout << "--- UPDATE STEP 1 ---" << endl;
+	cout << "K: " << endl << Ktemp << endl;
+	cout << "x: " << endl << xtemp << endl;
+	cout << "T: " << endl << T << endl << endl;
+	cout << "P: " << endl << P << endl << endl;
+	
+	Ktemp = P*H.transpose()*(H*P*H.transpose() + R).inverse();
+	xtemp = xtemp + Ktemp*(z - H*xtemp);
+  P = (Matrix4d::Identity() - Ktemp*H)*P;
+  
+  cout << "--- UPDATE STEP 2 ---" << endl;
+	cout << "K: " << endl << Ktemp << endl;
+	cout << "x: " << endl << xtemp << endl;
+	cout << "T: " << endl << T << endl << endl;
+	cout << "P: " << endl << P << endl << endl;
+	
+	Ktemp = P*H.transpose()*(H*P*H.transpose() + R).inverse();
+	xtemp = xtemp + Ktemp*(z - H*xtemp);
+  P = (Matrix4d::Identity() - Ktemp*H)*P;
+  
+  cout << "--- UPDATE STEP 3 ---" << endl;
+	cout << "K: " << endl << Ktemp << endl;
+	cout << "x: " << endl << xtemp << endl;
+	cout << "T: " << endl << T << endl << endl;
+	cout << "P: " << endl << P << endl << endl;
+	
+  P = T;
 }
 
 void KalmanFilter::predict()

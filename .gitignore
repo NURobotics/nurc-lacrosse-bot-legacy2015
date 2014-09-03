@@ -1,3 +1,6 @@
 # All swap files
 *.swp
+*.swo
+*.swn
+*.pyc
 *.backup
