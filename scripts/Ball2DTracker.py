@@ -25,8 +25,8 @@ class Ball2DTracker(Tracker):
       self.transformed_image = self.threshold_filter(self.transformed_image)
       self.centroid = self.centroid_algo(self.transformed_image)
       self.transformed_image = cv2.cvtColor(self.transformed_image, cv2.cv.CV_GRAY2BGR)
-      cv2.circle(self.transformed_image, self.centroid, 2, (255, 0, 0), -1)
       self.centroid = tuple([2*i for i in self.centroid])
+      cv2.circle(self.transformed_image, self.centroid, 2, (255, 0, 0), -1)
       cv2.circle(self.image, self.centroid, 2, (255, 0, 0), -1)
 
 if __name__ == '__main__':

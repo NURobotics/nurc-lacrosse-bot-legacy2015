@@ -92,8 +92,8 @@ clean: CMakeFiles/Algorithms.dir/clean
 
 # All Build rule for target.
 CMakeFiles/Ball2DTrackerTest.dir/all: CMakeFiles/Algorithms.dir/all
-CMakeFiles/Ball2DTrackerTest.dir/all: CMakeFiles/Filters.dir/all
 CMakeFiles/Ball2DTrackerTest.dir/all: CMakeFiles/Trackers.dir/all
+CMakeFiles/Ball2DTrackerTest.dir/all: CMakeFiles/Filters.dir/all
 	$(MAKE) -f CMakeFiles/Ball2DTrackerTest.dir/build.make CMakeFiles/Ball2DTrackerTest.dir/depend
 	$(MAKE) -f CMakeFiles/Ball2DTrackerTest.dir/build.make CMakeFiles/Ball2DTrackerTest.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/tgd/Code/nurobotics_ws/lacrosse-bot/build/CMakeFiles  2

@@ -16,10 +16,10 @@ int main(int argc, char **argv)
     nurc::Ball2DTracker tracker;
 
     while(cv::waitKey(1) == -1) {
-			tracker.captureImageFrame();
+			tracker.update();
       cv::imshow("Feed Image", tracker.getImage());
       cv::imshow("Transformed Image", tracker.getTransformedImage());
-
+      
       cv::Point measured_center = tracker.getMeasuredCenter();
       cv::Point estimated_center = tracker.getEstimatedCenter();
 

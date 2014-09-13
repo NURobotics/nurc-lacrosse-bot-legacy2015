@@ -13,6 +13,8 @@ SET(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/CMakeSystem.cmake"
   "/opt/ros/groovy/share/OpenCV/OpenCVConfig-version.cmake"
   "/opt/ros/groovy/share/OpenCV/OpenCVConfig.cmake"
+  "/opt/ros/groovy/share/OpenCV/OpenCVModules-relwithdebinfo.cmake"
+  "/opt/ros/groovy/share/OpenCV/OpenCVModules.cmake"
   "/opt/ros/hydro/share/eigen/cmake/eigen-config-version.cmake"
   "/opt/ros/hydro/share/eigen/cmake/eigen-config.cmake"
   "/usr/share/cmake-2.8/Modules/CMakeCInformation.cmake"
