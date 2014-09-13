@@ -6,6 +6,7 @@ namespace nurc {
 Ball2DTracker::Ball2DTracker() :
 	Tracker(),
 	threshold_f_(Vec3b(150,0,0), Vec3b(175,255,255)),
+  predicted_state_(2,1),
   kalman_f_(4,2,0),
 	centroid_a_()
 {
@@ -19,7 +20,10 @@ Ball2DTracker::Ball2DTracker() :
 	current_centroid_.x *= 2;
 	current_centroid_.y *= 2;
   
-  kalman_f_.transitionMatrix = *(Mat_<float>(4, 4) << 1,0,1,0V,   0,1,0,1,  0,0,1,0,  0,0,0,1);
+  predicted_state_.at<float>(0) = 0;
+  predicted_state_.at<float>(1) = 0;
+  
+  kalman_f_.transitionMatrix = *(Mat_<float>(4, 4) << 1,0,1,0,   0,1,0,1,  0,0,1,0,  0,0,0,1);
   Mat_<float> measurement(2,1); measurement.setTo(Scalar(0));
   kalman_f_.statePre.at<float>(0) = current_centroid_.x;
   kalman_f_.statePre.at<float>(1) = current_centroid_.y;
@@ -57,12 +61,11 @@ void Ball2DTracker::update()
     cvtColor(transformed_image_, transformed_image_, COLOR_BGR2HSV);
     resize(transformed_image_, transformed_image_, Size(0,0), 0.5, 0.5, INTER_LANCZOS4);
     GaussianBlur(transformed_image_, transformed_image_, Size(9,9), 2, 2);
+  
     current_centroid_ = centroid_a_(threshold_f_(transformed_image_));
     current_centroid_.x *= 2;
     current_centroid_.y *= 2;
     
-    // double vel_x = (centroid.x - current_centroid_.x)*getTickFrequency()/double(current_tick_count_ - previous_tick_count_);
-    // double vel_y = (centroid.y - current_centroid_.y)*getTickFrequency()/double(current_tick_count_ - previous_tick_count_);
     double dt = double(current_tick_count_ - previous_tick_count_)/getTickFrequency();
 
     // Update the Transition matrix dt
@@ -70,6 +73,10 @@ void Ball2DTracker::update()
     //Vector4d &ps = kalman_f_.getPredictedState();
     //ps(0,0) = 100;
     //ps(1,0) = 100;
+  
+    kalman_f_.transitionMatrix.at<float>(0,2) = dt;
+    kalman_f_.transitionMatrix.at<float>(1,3) = dt;
+    
     Mat_<float> measurement(2,1);
     measurement(0) = current_centroid_.x;
     measurement(1) = current_centroid_.y;

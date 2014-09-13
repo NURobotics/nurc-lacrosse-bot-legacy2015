@@ -30,11 +30,11 @@ public:
 	
 	cv::Mat& getTransformedImage() { return transformed_image_; }
 	cv::Point getMeasuredCenter() { return current_centroid_; }
-  cv::Point getEstimatedCenter() { return cv::Point(predicted_state_.at<float>(0), predicted_state_.at<float>(1)); }
+  cv::Point getEstimatedCenter() { return cv::Point((int)predicted_state_.at<float>(0), (int)predicted_state_.at<float>(1)); }
 	
   void update();
 
-  Mat predicted_state_;
+  cv::Mat_<float> predicted_state_;
 	
 //protected:
 	// Filters
