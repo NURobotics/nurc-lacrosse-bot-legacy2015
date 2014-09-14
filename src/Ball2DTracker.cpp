@@ -30,9 +30,10 @@ Ball2DTracker::Ball2DTracker() :
   kalman_f_.statePre.at<float>(2) = 0;
   kalman_f_.statePre.at<float>(3) = 0;
   
-  setIdentity(kalman_f_.measurementMatrix);
-  setIdentity(kalman_f_.processNoiseCov, Scalar::all(1e-4));
-  setIdentity(kalman_f_.measurementNoiseCov, Scalar::all(10));
+  kalman_f_.measurementMatrix.create(2, 4, CV_32FC1);
+  kalman_f_.measurementMatrix = *(Mat_<float>(2,4) << 1, 0, 0, 0,  0, 1, 0, 0);
+  
+  setIdentity(kalman_f_.measurementNoiseCov, Scalar::all(2));
   setIdentity(kalman_f_.errorCovPost, Scalar::all(.1));
 }
 
@@ -67,15 +68,15 @@ void Ball2DTracker::update()
     current_centroid_.y *= 2;
     
     double dt = double(current_tick_count_ - previous_tick_count_)/getTickFrequency();
-
-    // Update the Transition matrix dt
-
-    //Vector4d &ps = kalman_f_.getPredictedState();
-    //ps(0,0) = 100;
-    //ps(1,0) = 100;
   
     kalman_f_.transitionMatrix.at<float>(0,2) = dt;
     kalman_f_.transitionMatrix.at<float>(1,3) = dt;
+
+    kalman_f_.predict();
+  
+    std::cout << "Transition Matrix: \n" << kalman_f_.transitionMatrix << std::endl;
+    std::cout << "Measurement Matrix: \n" << kalman_f_.measurementMatrix << std::endl;
+    std::cout << "Kalman Gain: \n" << kalman_f_.gain << std::endl;
     
     Mat_<float> measurement(2,1);
     measurement(0) = current_centroid_.x;
@@ -83,10 +84,11 @@ void Ball2DTracker::update()
     predicted_state_ = kalman_f_.correct(measurement);
     
     cv::cvtColor(transformed_image_,transformed_image_,CV_GRAY2BGR);
+    resize(transformed_image_, transformed_image_, Size(0,0), 2, 2, INTER_LANCZOS4);
     cv::circle(image_, current_centroid_, 2, cv::Scalar(255,0,0), -1);
     cv::circle(image_, getEstimatedCenter(), 2, cv::Scalar(0,0,255), -1);
-    // cv::circle(transformed_image_, current_centroid_, 2, cv::Scalar(255,0,0), -1);
-    // cv::circle(transformed_image_, getEstimatedCenter(), 2, cv::Scalar(0,0,255), -1);
+    cv::circle(transformed_image_, current_centroid_, 2, cv::Scalar(255,0,0), -1);
+    cv::circle(transformed_image_, getEstimatedCenter(), 2, cv::Scalar(0,0,255), -1);
   } 
 }
 

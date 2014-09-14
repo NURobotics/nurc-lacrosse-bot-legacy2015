@@ -36,7 +36,6 @@ public:
 
   cv::Mat_<float> predicted_state_;
 	
-//protected:
 	// Filters
 	ThresholdFilter threshold_f_;
 	cv::KalmanFilter kalman_f_;
