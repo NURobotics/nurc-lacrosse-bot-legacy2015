@@ -7,8 +7,8 @@ from Filter import ThresholdFilter, KalmanFilter
 from Algorithm import Centroid
 
 class Ball2DTracker(Tracker):
-  
-  def __init__(self):
+
+  def __init__(self, algorithm):
     super(Ball2DTracker, self).__init__()
     self.threshold_filter = ThresholdFilter( np.array([150, 50, 50], dtype=np.uint8), np.array([175, 255, 255], dtype=np.uint8) )
     
@@ -18,8 +18,8 @@ class Ball2DTracker(Tracker):
     self.kalman_filter = KalmanFilter(self.Q, self.R)
     self.centroid_algo = Centroid()
     self.transformed_image = np.copy( self.image )
-    self.centroid = self.centroid_algo(self.threshold_filter(self.transformed_image))
-  
+    self.center = (0, 0)
+
   def captureImageFrame(self):
     super(Ball2DTracker, self).captureImageFrame()
     if self.valid:
@@ -28,7 +28,13 @@ class Ball2DTracker(Tracker):
       self.transformed_image = cv2.GaussianBlur(self.transformed_image, (9,9), 2, self.transformed_image, 2)
       self.transformed_image = cv2.cvtColor(self.transformed_image, cv2.COLOR_BGR2HSV)
       self.transformed_image = self.threshold_filter(self.transformed_image)
-      self.centroid = self.centroid_algo(self.transformed_image)
+
+      # Calculate center
+      center = self.algo(self.transformed_image)
+      if center != (-1, -1):
+        self.center = tuple([2*i for i in center])
+
+      # Draw center
       self.transformed_image = cv2.cvtColor(self.transformed_image, cv2.cv.CV_GRAY2BGR)
       self.centroid = tuple([2*i for i in self.centroid])
       filtered = self.kalman_filter(self.centroid)
@@ -38,7 +44,7 @@ class Ball2DTracker(Tracker):
 
 if __name__ == '__main__':
   # Ball Tracker Tests
-  b2dt = Ball2DTracker()
+  b2dt = Ball2DTracker(CCL)
   while cv2.waitKey(1) == -1 and b2dt.valid:
     cv2.imshow("Transformed Image", b2dt.transformed_image)
     cv2.imshow("Original Image", b2dt.image)
